@@ -93,6 +93,8 @@ The application uses **Flask sessions** to maintain user login state and **passw
 ---
 
 # 📂 Project Structure
+
+```text
 python-fullstack-task2
 
 │
@@ -110,12 +112,11 @@ python-fullstack-task2
 │
 │
 └── static
-    │
-    ├── register_style.css
-    ├── login_style.cs
+|    │
+|    ├── register_style.css
+|    ├── login_style.cs
+```
 
-
----
 
 # ⚙️ Installation & Setup
 
@@ -123,34 +124,36 @@ python-fullstack-task2
 
 ```bash
 git clone YOUR_REPOSITORY_LINK
+```
 
-2. Navigate to project folder
+## 2. Navigate to project folder
 ```bash
 cd python-fullstack-task2
 ```
 
-3. Create virtual environment
+## 3. Create virtual environment
 ```bash
 python -m venv venv
 ```
 
-4. Activate virtual environment
+## 4. Activate virtual environment
 ```bash
 venv\Scripts\activate
 ```
 
-5. Install required packages
-``bash
+## 5. Install required packages
+```bash
 pip install flask werkzeug
 ```
-
-6. Run the application
+## 6. Run the application
 ```bash
 python app.py
 ```
 
-🌐 Application Flow
-Registration Flow
+## 🌐 Application Flow
+## Registration Flow
+
+```text
 User enters details
         ↓
 Validate username
@@ -162,8 +165,11 @@ Store in SQLite database
 Registration successful
         ↓
 Login page
+```
 
-Login Flow
+## Login Flow
+
+```text
 User enters credentials
         ↓
 Check database
@@ -173,8 +179,11 @@ Verify hashed password
 Create session
         ↓
 Open dashboard
+```
 
-Logout Flow
+## Logout Flow
+
+```text
 Click Logout
         ↓
 Confirmation popup
@@ -182,14 +191,17 @@ Confirmation popup
 Clear session
         ↓
 Redirect to login
+```
 
-📌 Future Improvements
---> Email verification
---> Forgot password feature
---> User profile management
---> Password strength indicator
---> Deployment using cloud services
+## 📌 Future Improvements
+* Email verification
+* Forgot password feature
+* User profile management
+* Password strength indicator
+* Deployment using cloud services
 
-👩‍💻 Author
+## 👩‍💻 Author
+
 Moulika Tenali
+
 B.Tech Computer Science Engineering Student
