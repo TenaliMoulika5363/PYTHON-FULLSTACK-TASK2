@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Create Account</title>
+
+<link rel="stylesheet" href="{{url_for('static',filename='register_style.css')}}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <div class="logo">
+        🔐
+    </div>
+
+
+    <h1>Create Account</h1>
+
+    <p class="subtitle">
+        Register to access your dashboard
+    </p>
+
+
+    <form method="POST" action="/register" onsubmit="return validatePassword()">
+
+
+        <label>Username</label>
+
+        <input 
+        type="text" 
+        name="username"
+        placeholder="Enter your username"
+        required>
+
+
+
+        <label>Password</label>
+
+
+        <div class="password-box">
+
+
+            <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Create password"
+            required>
+
+            <p id="password-error"></p>
+
+            <span onclick="showPassword()" class="eye">
+                👁
+            </span>
+
+
+        </div>
+
+        {% if error %}
+
+        <p class="error">
+        {{ error }}
+        </p>
+
+        {% endif %}
+
+        <button>
+            Sign Up
+        </button>
+
+
+        <p class="login">
+
+            Already have an account?
+
+            <a href="/login">
+                Login
+            </a>
+
+        </p>
+
+
+
+    </form>
+
+
+</div>
+
+
+
+<script>
+
+function showPassword(){
+
+    let password =
+    document.getElementById("password");
+
+
+    if(password.type === "password")
+    {
+
+        password.type="text";
+
+    }
+
+    else
+    {
+
+        password.type="password";
+
+    }
+
+}
+
+</script>
+
+{% if success %}
+    <div class="popup">
+
+    <div class="popup-box">
+
+        <h2>Registration Successful 🎉</h2>
+
+        <p>Let's get started</p>
+
+        <button onclick="goLogin()">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function goLogin(){
+
+    window.location.href="/login";
+
+}
+
+</script>
+{% endif %}
+
+<script>
+
+    function validatePassword(){
+
+        let password =
+        document.getElementById("password").value;
+
+        let error =
+        document.getElementById("password-error");
+
+        let pattern =
+        /^(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/;
+
+        if(!pattern.test(password)){
+
+            error.innerHTML =
+            "Password must have 8 characters, number and special character.";
+
+            return false;
+
+        }
+
+        error.innerHTML="";
+
+        return true;
+    }
+
+</script>
+
+</body>
+
+</html>

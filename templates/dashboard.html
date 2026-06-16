@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+    margin:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #667eea,
+        #89f7fe
+    );
+
+    font-family:'Segoe UI',Arial,sans-serif;
+
+}
+
+
+
+/* Main dashboard card */
+
+.dashboard-card{
+
+    width:450px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.2);
+
+
+    animation:appear 0.5s ease;
+
+}
+
+
+
+@keyframes appear{
+
+    from{
+
+        transform:translateY(30px);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+/* Profile icon */
+
+.profile-icon{
+
+    font-size:70px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* Heading */
+
+h1{
+
+    font-size:32px;
+
+    color:#1f2937;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Paragraph */
+
+.dashboard-text{
+
+    font-size:18px;
+
+    color:#6b7280;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Logout button */
+
+
+.logout-btn{
+
+
+    width:160px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+.logout-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* Popup background */
+
+.logout-popup{
+
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+
+    width:100%;
+
+    height:100%;
+
+
+    background:rgba(0,0,0,0.45);
+
+
+    justify-content:center;
+
+    align-items:center;
+
+
+}
+
+
+
+/* Popup box */
+
+
+.logout-box{
+
+
+    background:white;
+
+    width:350px;
+
+    padding:30px;
+
+
+    border-radius:20px;
+
+
+    text-align:center;
+
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.3);
+
+
+    animation:popup 0.3s ease;
+
+
+}
+
+
+
+@keyframes popup{
+
+
+    from{
+
+        transform:scale(0.8);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+.logout-box h2{
+
+    color:#1f2937;
+
+}
+
+
+
+.logout-box p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+}
+
+
+
+/* Popup buttons */
+
+
+.logout-box button{
+
+
+    width:90px;
+
+    padding:10px;
+
+    margin:10px;
+
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+
+.yes-btn{
+
+    background:#ef4444;
+
+}
+
+
+
+.no-btn{
+
+    background:#6b7280;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- Dashboard -->
+
+<div class="dashboard-card">
+
+
+    <div class="profile-icon">
+
+        👤
+
+    </div>
+
+
+    <h1>
+        Welcome, {{username}} 🎉
+    </h1>
+
+
+
+    <p class="dashboard-text">
+
+        This is your protected Dashborad
+
+    </p>
+
+
+
+    <button 
+    class="logout-btn"
+    onclick="showLogoutPopup()">
+
+        Logout
+
+    </button>
+
+
+</div>
+
+
+
+
+
+<!-- Logout Popup -->
+
+
+<div class="logout-popup" id="logoutPopup">
+
+
+
+    <div class="logout-box">
+
+
+        <h2>
+            Logout?
+        </h2>
+
+
+
+        <p>
+            Are you sure you want to logout?
+        </p>
+
+
+
+        <button 
+        class="yes-btn"
+        onclick="logoutUser()">
+
+            Yes
+
+        </button>
+
+
+
+
+        <button 
+        class="no-btn"
+        onclick="closePopup()">
+
+            No
+
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+function showLogoutPopup(){
+
+
+    document.getElementById("logoutPopup")
+    .style.display="flex";
+
+
+}
+
+
+
+function closePopup(){
+
+
+    document.getElementById("logoutPopup")
+    .style.display="none";
+
+
+}
+
+
+
+function logoutUser(){
+
+
+    window.location.href="/logout";
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
