@@ -204,15 +204,15 @@ Redirect to login
 
 ### Register Page
 
-![Register Page](screenshots/register_page.png)
+![Register Page](Screenshots/register_page.png)
 
 ### Login Page
 
-![Login Page](screenshots/login_page.png)
+![Login Page](Screenshots/login_page.png)
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard_page.png)
+![Dashboard](Screenshots/dashboard_page.png)
 
 ## Task Demo Video
 
