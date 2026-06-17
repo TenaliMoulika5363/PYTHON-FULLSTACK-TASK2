@@ -212,7 +212,7 @@ Redirect to login
 
 ### Dashboard
 
-![Dashboard](Screenshots/dashboard_page.png)
+![Dashboard](Screenshots/dashboard.png)
 
 ## Task Demo Video
 
