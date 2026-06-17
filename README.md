@@ -200,6 +200,24 @@ Redirect to login
 * Password strength indicator
 * Deployment using cloud services
 
+## Screenshots
+
+### Register Page
+
+![Register Page](screenshots/register_page.png)
+
+### Login Page
+
+![Login Page](screenshots/login_page.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard_page.png)
+
+## Task Demo Video
+
+[Watch Demo Video](demo_video/Demo__video.mp4)
+
 ## 👩‍💻 Author
 
 Moulika Tenali
